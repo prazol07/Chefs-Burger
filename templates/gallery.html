@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+  <div class="container text-center my-5 pt-5 pb-4">
+    <h1 class="display-3 text-white mb-3 animated slideInDown">
+      Gallery
+    </h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center text-uppercase">
+        <li class="breadcrumb-item"><a href="home">Home</a></li>
+        <li class="breadcrumb-item text-white active" aria-current="page">
+          Gallery
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+</div>
+
+<div class="container gallery-container">
+  <div class="tz-gallery">
+    <div class="row ">
+      {% for pics in gallery %}
+      <div class="col-sm-6 col-md-4">
+        <a class="lightbox" href="{{pics.img.url}}">
+          <img src="{{pics.img.url}}" />
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+    
